@@ -1,7 +1,7 @@
 var reLineBreak = /\n\r?/;
 
 /**
-  # altpub-aside
+  # altpub-section
 
   This is module for converting aside sections from "altpub" markdown sources
   into the valid HTML equivalents. This module supports pre-parsing of the

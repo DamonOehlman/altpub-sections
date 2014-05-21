@@ -1,4 +1,4 @@
-# altpub-aside
+# altpub-section
 
 This is module for converting aside sections from "altpub" markdown sources
 into the valid HTML equivalents. This module supports pre-parsing of the
@@ -7,9 +7,9 @@ blocks outlined in the LeanPub manual:
 https://leanpub.com/help/manual#leanpub-auto-asidessidebars
 
 
-[![NPM](https://nodei.co/npm/altpub-aside.png)](https://nodei.co/npm/altpub-aside/)
+[![NPM](https://nodei.co/npm/altpub-section.png)](https://nodei.co/npm/altpub-section/)
 
-[![experimental](https://img.shields.io/badge/stability-experimental-red.svg)](https://github.com/badges/stability-badges) [![Build Status](https://img.shields.io/travis/DamonOehlman/altpub-aside.svg?branch=master)](https://travis-ci.org/DamonOehlman/altpub-aside) 
+[![experimental](https://img.shields.io/badge/stability-experimental-red.svg)](https://github.com/badges/stability-badges) [![Build Status](https://img.shields.io/travis/DamonOehlman/altpub-section.svg?branch=master)](https://travis-ci.org/DamonOehlman/altpub-section) 
 
 ## Why Use This?
 
