@@ -85,6 +85,9 @@ function combineBlocks(totalLines) {
     // if we have a reset, then do that now
     if (reset && collector) {
       memo.push(collector);
+
+      // reset the collector
+      collector = undefined;
     }
 
     // if we don't have a content type, append the line
