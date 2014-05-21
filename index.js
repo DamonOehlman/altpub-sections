@@ -16,8 +16,11 @@ var sectionTag = formatter('<section class="{{ 0 }}">{{ 1 }}</section>');
 
   My original intention was to add custom parsing rules to a markdown parser
   (such as [marked](https://github.com/chjj/marked)). This is non-trivial,
-  however, and can achieved my simply preparsing the text that `markded` will
+  however, and can achieved my simply preparsing the text that marked will
   parse.
+
+  Additionally, marked is used to parse the content of these sections as
+  inline markdown is usually allowed from what I can tell in the LeanPub docs.
 **/
 
 var rules = {

@@ -7,16 +7,19 @@ blocks outlined in the LeanPub manual:
 https://leanpub.com/help/manual#leanpub-auto-asidessidebars
 
 
-[![NPM](https://nodei.co/npm/altpub-section.png)](https://nodei.co/npm/altpub-section/)
+[![NPM](https://nodei.co/npm/altpub-sections.png)](https://nodei.co/npm/altpub-sections/)
 
-[![experimental](https://img.shields.io/badge/stability-experimental-red.svg)](https://github.com/badges/stability-badges) [![Build Status](https://img.shields.io/travis/DamonOehlman/altpub-section.svg?branch=master)](https://travis-ci.org/DamonOehlman/altpub-section) 
+[![experimental](https://img.shields.io/badge/stability-experimental-red.svg)](https://github.com/badges/stability-badges) [![Build Status](https://img.shields.io/travis/DamonOehlman/altpub-sections.svg?branch=master)](https://travis-ci.org/DamonOehlman/altpub-sections) 
 
 ## Why Use This?
 
 My original intention was to add custom parsing rules to a markdown parser
 (such as [marked](https://github.com/chjj/marked)). This is non-trivial,
-however, and can achieved my simply preparsing the text that `markded` will
+however, and can achieved my simply preparsing the text that marked will
 parse.
+
+Additionally, marked is used to parse the content of these sections as
+inline markdown is usually allowed from what I can tell in the LeanPub docs.
 
 ## License(s)
 
