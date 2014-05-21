@@ -1,6 +1,6 @@
 {
   "name": "altpub-sections",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A pre-markdown parser for converting special 'altpub' content sections into sensible HTML",
   "main": "index.js",
   "scripts": {
