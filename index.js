@@ -4,7 +4,7 @@ var reLineBreak = /\n\r?/;
 var sectionTag = formatter('<section class="{{ 0 }}">{{ 1 }}</section>');
 
 /**
-  # altpub-section
+  # altpub-sections
 
   This is module for converting aside sections from "altpub" markdown sources
   into the valid HTML equivalents. This module supports pre-parsing of the
