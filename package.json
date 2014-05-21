@@ -1,5 +1,5 @@
 {
-  "name": "altpub-section",
+  "name": "altpub-sections",
   "version": "0.0.0",
   "description": "A pre-markdown parser for converting special 'altpub' content sections into sensible HTML",
   "main": "index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/DamonOehlman/altpub-section.git"
+    "url": "https://github.com/DamonOehlman/altpub-sections.git"
   },
   "keywords": [
     "altpub",
@@ -19,10 +19,14 @@
   "author": "Damon Oehlman <damon.oehlman@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/DamonOehlman/altpub-section/issues"
+    "url": "https://github.com/DamonOehlman/altpub-sections/issues"
   },
-  "homepage": "https://github.com/DamonOehlman/altpub-section",
+  "homepage": "https://github.com/DamonOehlman/altpub-sections",
   "devDependencies": {
     "tape": "^2"
+  },
+  "dependencies": {
+    "formatter": "^0.4.1",
+    "marked": "~0.3"
   }
 }

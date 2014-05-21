@@ -1,4 +1,7 @@
+var marked = require('marked');
+var formatter = require('formatter');
 var reLineBreak = /\n\r?/;
+var sectionTag = formatter('<section class="{{ 0 }}">{{ 1 }}</section>');
 
 /**
   # altpub-section
@@ -17,21 +20,76 @@ var reLineBreak = /\n\r?/;
   parse.
 **/
 
-module.exports = function(opts, text) {
-
-  function transform(input) {
-    var lines = input.split(reLineBreak);
-
-    console.log(lines);
-  }
-
-  // check to see if we have been passed just text
-  if (typeof opts == 'string' || (opts instanceof String)) {
-    text = opts;
-    opts = {};
-  }
-
-  // if we have been passed text, then apply the change, otherwise return
-  // the transform function
-  return typeof text != 'undefined' ? transform(text) : transform;
+var rules = {
+  aside: /^\s*A\>\s*(.*)$/
 };
+
+var ruleKeys = Object.keys(rules);
+
+module.exports = function(input, opts) {
+  var lines = input.split(reLineBreak);
+
+  // classify lines
+  return lines.map(classify)
+    // collect sections
+    .reduce(combineBlocks(lines.length), [])
+    // convert inline sections
+    .map(sectionize)
+    .join('\n');
+};
+
+function classify(line) {
+  var match;
+  for (var ii = ruleKeys.length; ii--; ) {
+    match = rules[ruleKeys[ii]].exec(line);
+
+    if (match) {
+      return {
+        type: ruleKeys[ii],
+        content: match[1],
+        original: line
+      };
+    }
+  }
+
+  return line;
+}
+
+function combineBlocks(totalLines) {
+  var lastType;
+  var collector;
+  var lastIndex = totalLines - 1;
+
+  return function(memo, line, index) {
+    var reset = (line && line.type && line.type !== lastType) ||
+        (lastType && (! line.type)) || false;
+
+    // update the last type
+    lastType = line && line.type;
+
+    // if we have a reset, then do that now
+    if (reset && collector) {
+      memo.push(collector);
+    }
+
+    // if we don't have a content type, append the line
+    if (! line.type) {
+      return memo.concat(line);
+    }
+
+    collector = collector || { type: line.type, lines: [] };
+    collector.lines.push(line.content);
+
+    return memo;
+  }
+}
+
+function sectionize(input) {
+  var sectionType = input && input.type;
+
+  if (sectionType) {
+    return sectionTag(sectionType, marked(input.lines.join('\n')));
+  }
+
+  return input;
+}
