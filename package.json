@@ -27,6 +27,6 @@
   },
   "dependencies": {
     "formatter": "^0.4.1",
-    "marked": "~0.3"
+    "marked": "~4.0.10"
   }
 }
